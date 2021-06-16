@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    <body>
+        <h2>Article header</h2>      
+          <div id="text">
+            <p>First paragraph</p>
+            <p>Second paragraph</p>
+            <p>Third paragraph</p>
+          </div>
+        <p>Another text</p>
+        <script>
+            let idTag = document.querySelectorAll("#text p");
+            for(let i= 0; i<idTag.length; i++){
+                alert('Select text ' + i+ ': '+ idTag[i].innerHTML);
+            }
+                      
+        </script>
+     
+</body>
+</html>
