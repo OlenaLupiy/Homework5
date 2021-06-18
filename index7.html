@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <select name="country" id="country">
+      <option value="ger">Germany</option>
+      <option value="usa">USA</option>
+      <option value="ukr">Ukraine</option>
+    </select>
+
+    <select name="cities" id="cities"></select>
+    <p></p>
+
+    <script>
+      const townArr = {
+        ger: ["Berlin", "Hamburg", "Dortmund"],
+        usa: ["Chikago", "Boston", "Washington"],
+        ukr: ["Lviv", "Odesa", "Kyiv"],
+      };
+      let first_select = document.getElementById("country");
+      first_select.addEventListener("change", func);
+      first_select.addEventListener("change", toParag);
+
+      let city_select = document.getElementById("cities");
+      city_select.addEventListener("change", toParag);
+
+      function func() {
+        city_select.innerHTML = "";
+        let selected_country = first_select.value;
+        for (let i = 0; i < townArr[selected_country].length; i++) {
+          let new_option = document.createElement("option");
+          new_option.innerHTML = townArr[selected_country][i];
+          city_select.appendChild(new_option);
+        }
+
+        let parag = document.querySelector("p");
+        function toParag() {
+          parag.innerHTML = "";
+          parag.innerHTML =
+            first_select.options[first_select.selectedIndex].text +
+            city_select.options[city_select.selectedIndex].text;
+        }
+      }
+    </script>
+  </body>
+</html>

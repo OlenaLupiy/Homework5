@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="liveBtn">Move button</button>
+    <p id="myId"></p>
+    <script>
+        let z = document.getElementById('liveBtn');
+        z.addEventListener('click', mouseClickFunction);
+        z.addEventListener('mouseover', mouseOverFunction);
+        z.addEventListener('mouseout', mouseOutFunc);
+
+        function mouseClickFunction(){
+            document.getElementById('myId').innerHTML+= 'I was pressed!<br>';
+        }
+        function mouseOverFunction(){
+            document.getElementById('myId').innerHTML+= 'Mouse on me!<br>';
+        }
+        function mouseOutFunc(){
+            document.getElementById('myId').innerHTML+= 'Mouse is not at me!<br>';
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="setBackground('blue')"> Click to make the page blue </button>
+    <button ondblclick="setBackground('pink')">Double-ckick to make the page pink</button>
+    <button onmousedown="setBackground('brown')" onmouseup="setBackground('white')">Click and hold to make the page brownn</button>
+    <a href="https://antoshka.ua/ua" onmouseover="setBackground('yellow')" onmouseout="setBackground('white')">Hover over to make page yellow/</a>
+    
+    <script>
+        function setBackground(color){
+            document.body.style.background = color;
+        }
+    </script>
+</body>
+</html>
