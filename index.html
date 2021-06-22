@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Task 1
+        function upperCase(str){
+            let re = /^[A-Z]/g;
+            if (str.match(re)){
+                console.log('String starts with uppercase')
+            }
+            else {console.log('Strings not start with uppercase');}
+        }
+        upperCase('RegExp');
+
+        // Task 2
+
+        function checkMail(mail){
+            let re = /@/;
+            console.log(re.test(mail));
+        }
+        checkMail('stocrotka@gmail.com')
+
+        //Task 3
+
+        let str = 'cdbBdbsbz';
+        let re = /d{1}(b+)(d{1})/ig;
+        
+        console.log(re.exec(str));
+        
+        //Task 4
+        let str1 = 'Java Script'
+        
+        console.log(str1.replace(/(\w+) (\w+)/i, '$2, $1'))
+
+        //Task 5
+
+        let validateCardNumber = function(cardNumber){
+            
+              let re = /\d{4}-\d{4}-\d{4}-\d{4}/g;
+            if(cardNumber.match(re)){
+                alert('Valid number');
+            }
+            else{
+                alert('Invalid number');
+            }
+        }
+        validateCardNumber('1234-5632-7859-4569');
+
+        //Task 6
+
+        function checksMail(str){
+            let re = /^([^#-_])\w+@[^-{2,}]/g;
+            if(str.match(re)){
+                console.log('Email is correct')
+            }
+            else {
+                console.log('Email is not correct')
+            }
+        }
+        checksMail('my_mail@gmail.com');
+        checksMail('#my_mail@gmail.com');
+        checksMail('my_ma--il@gmail.com');
+
+        //Task 7
+        function checkLogin(log){
+            let re = /^([^0-9])[a-zA-Z0-9]{2,8}\./;
+            if(log.match(re)){
+                console.log(true)
+            }
+            else{console.log(false);}
+                    }
+         checkLogin('ee1.1ret3');  
+         checkLogin('ee1*1ret3');  
+ </script>
+</body>
+</html>
