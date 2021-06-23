@@ -21,7 +21,7 @@
         // Task 2
 
         function checkMail(mail){
-            let re = /@/;
+            let re = /\S+@\S+\.\S+/;
             console.log(re.test(mail));
         }
         checkMail('stocrotka@gmail.com')
@@ -29,20 +29,20 @@
         //Task 3
 
         let str = 'cdbBdbsbz';
-        let re = /d{1}(b+)(d{1})/ig;
+        let re = /d(b+)(d)/i;
         
         console.log(re.exec(str));
         
         //Task 4
         let str1 = 'Java Script'
         
-        console.log(str1.replace(/(\w+) (\w+)/i, '$2, $1'))
+        console.log(str1.replace(/(\w+)\s(\w+)/, '$2, $1'))
 
         //Task 5
 
         let validateCardNumber = function(cardNumber){
             
-              let re = /\d{4}-\d{4}-\d{4}-\d{4}/g;
+              let re = /\d{4}-\d{4}-\d{4}-\d{4}/;
             if(cardNumber.match(re)){
                 alert('Valid number');
             }
@@ -55,7 +55,7 @@
         //Task 6
 
         function checksMail(str){
-            let re = /^([^#-_])\w+@[^-{2,}]/g;
+           const re = /^[a-zA-Z0-9]+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/;
             if(str.match(re)){
                 console.log('Email is correct')
             }
@@ -66,10 +66,11 @@
         checksMail('my_mail@gmail.com');
         checksMail('#my_mail@gmail.com');
         checksMail('my_ma--il@gmail.com');
+        checksMail('my_ma-il@gmai.com')
 
         //Task 7
         function checkLogin(log){
-            let re = /^([^0-9])[a-zA-Z0-9]{2,8}\./;
+            let re = /^[a-zA-z]{1}[a-zA-Z0-9\.]{1,9}$/;
             if(log.match(re)){
                 console.log(true)
             }
