@@ -70,12 +70,12 @@
 
         //Task 7
         function checkLogin(log){
-            let re = /^[a-zA-z]{1}[a-zA-Z0-9\.]{1,9}$/;
-            if(log.match(re)){
-                console.log(true)
-            }
-            else{console.log(false);}
-                    }
+            const re = /^[a-zA-z]{1}[a-zA-Z0-9\.]{1,9}$/;
+            const reNumber = /[0-9\.]+/g;
+            const rezultNumber = log.match(reNumber);
+            const rezult = re.test(log);
+            console.log(`${log} is ${rezult} - ${rezultNumber}`)
+        }
          checkLogin('ee1.1ret3');  
          checkLogin('ee1*1ret3');  
  </script>
