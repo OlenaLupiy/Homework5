@@ -4,84 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
     <title>Document</title>
 </head>
 <body>
-    <script>
-        //Task 1
-      let arr = ["Tom", "Sam", "Ray", "Bob"];
-      let [x, y, , ...z] = arr;
-console.log(x); 
-console.log(y); 
-console.log(z); 
-
-        //Task 2
-let data = {
-   names: ["Sam", "Tom", "Ray", "Bob"],
-   ages: [20, 24, 22, 26],
-};
-let {names:[name1, name2, name3, name4], ages:[age1, age2, age3, age4]} = data;
-console.log(name2);
-console.log(age2);
-console.log(name4);
-console.log(age4);
-
-// Task 3
-function mul(...rest) {
-    let rezult = 1;
-    let isnumber;
-   for (let i of rest){
-       if (typeof i == 'number'){
-           rezult*= i;
-           isnumber = true;
-       }
-   }
-   return isnumber ? rezult : 0;
-}
-console.log(mul(1, "str", 2, 3, true)); 
-console.log(mul(null, "str", false, true)); 
-
-// Task 4
-let server = {
-   data: 0,
-   convertToString: function (callback) {
-      callback(() => {
-         return this.data + "";
-      });
-   }
-};
-let client = {
-   server: server,
-   result: "",
-   calc: function (data) {
-      this.server.data = data;
-      this.server.convertToString(this.notification());
-   },
-   notification: function () {
-      return (callback => {
-         this.result = callback();
-      });
-   }
-};
-client.calc(123);
-console.log(client.result); 
-console.log(typeof client.result); 
-
-// Task 5 
-let keys = [1, 2, 3, 4];
-let values = ["div", "span", "b", "i"];
-function mapBuilder(keys, values){
-    const map = new Map();
-    for (let i of keys) {
-        map.set(i, values[i-1]);
-    }
-    return map;
-}
-const map = mapBuilder(keys, values);
-    console.log(map.size); 
-	console.log(map.get(2)); 
-
-
-    </script>
+    <header>
+        <h1>Guess My Number!</h1>
+        <p class="between">(Between 1 and 20)</p>
+        <button class="btn again">Again!</button>
+        <div class="number">?</div>
+    </header>
+    <main>
+        <section class="left">
+            <input type="number" class="guess">
+            <button class="btn check">Check!</button>
+        </section>
+        <section class="right">
+            <p class="message">Start guessing...</p>
+            <p class="label-score">Score:<span class="score">20</span></p>
+            <p class="label-highscore">Highscore: <span class="highscore">0</span></p>
+        </section>
+    </main>
+    <script src="app.js"></script>
 </body>
 </html>
