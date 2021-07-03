@@ -8,9 +8,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-    <a href="https://www.w3schools.com/">W3School</a>
-    <script>
-        $("a[href='htpps://']").attr('target', '_blank');
-    </script>
+    <h2 class="head">header1</h2>
+    <h2 class="head">header2 <span class="inner">inner elem1</span></h2>
+    <h2>header3</h2>
+    <h2 class="head">header4<span>inner elem2</span></h2>
+    <h2>header5</h2>
+<script>
+     $('h2.head').css('background', 'green').find('.inner').css('fontSize', '35px')
+    
+</script>
 </body>
 </html>
